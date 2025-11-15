@@ -1,0 +1,81 @@
+/* Card container */
+
+.main {
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 60px;
+  display: flex;
+  gap: 12px;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  width: 900px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Title */
+.card h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Price wrapper ($ + 0) */
+.mid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.mid div {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.mid h1 {
+  font-size: 46px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Description text */
+.card p,
+.card div {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Button */
+.card button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn1 {
+  background-color: #e3bbf2;
+}
+
+.btn2{
+  background-color: #a8e7f0;
+}
+
+.btn3{
+  background-color: #f9d8ae;
+}
