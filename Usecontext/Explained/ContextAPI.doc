@@ -1,0 +1,29 @@
+COntext API
+
+the context APi is powerfull feature in react that enables you to manage state across
+your application more effectively , especially when dealing with deeply
+nested components
+
+Jargons:
+context : this is created using React.createContext(). it serves as a container
+for the data you want to share
+
+provider : this component wrap part of your application and provide the context
+value to all the desecendats . any componets that is a child of this provider 
+can access the context
+
+consumer : this components subscribes to the context changes . IT allow you to
+access the context value (using UseContext hook) 
+
+problem sa prop drilling
+use context is the solution
+root is App
+light is parent
+lightbulb is child
+lightcontrol is child
+
+so the use state is made in App 
+the create Context is global
+the provider is wraping the light components which next wrap the childs and also the props are getting send side by side
+so the all the desecendats can access it
+using the UseContext which return and object and getting destructure
