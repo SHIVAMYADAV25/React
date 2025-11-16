@@ -4,4 +4,4 @@ as your application grows, you might find that multiple components need access t
 state . instead of duplicating state in each component , you can lift the state 
 up to the LCA (lowest common ancestot) , allowing the common ancestor to manage it
 
-App => light(contain state) => (lightbulb and toggleSwitch) =>(giving the state)
+App => light(contain state) => (pass the state) => (lightbulb and toggleSwitch)
