@@ -1,0 +1,7 @@
+Rolling - up the state , unoptimal re-render (bad thing)
+
+as your application grows, you might find that multiple components need access to the same
+state . instead of duplicating state in each component , you can lift the state 
+up to the LCA (lowest common ancestot) , allowing the common ancestor to manage it
+
+App => light(contain state) => (lightbulb and toggleSwitch) =>(giving the state)
