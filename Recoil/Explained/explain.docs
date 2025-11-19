@@ -1,0 +1,32 @@
+# Introducing recoil
+
+A state management library for React that provides a way to manage global state with fine-grained control.
+
+Recoil minimizes unnecessary renders by only re-rendering components that depend on changed atoms
+
+The performance of a React app is measured by the number of re-renders. Each re-render is expensive, and you should aim to minimise it.
+
+import {RecoilRoot, useRecoilValue, useSetRecoilState} from "recoil"
+
+mostly divide in three categariu
+1) wrap the root components ot any parent components in RecoilRoot
+
+2) useRecoilValue to access the value of the variable (which are store as Atom in store/Atom/counter.js file)
+like this:import { atom } from "recoil";
+
+export const counterAtom = atom({
+    default: 0,
+    key : "counter"
+})
+
+3) useSetRecoilState to use the set the value of the variable use this function (does not cause re-render)
+
+only the function calling useRecoilValue will be render
+
+flow:
+App -> Counter -> (Increment , Decrement , Value) is store inside them we access and set the value
+
+## Key concepts in recoil
+
+- **Atoms:** Units of state that can be read from and written to from any component.
+- **Selectors:** Functions that derive state from atoms or other selectors, allowing for computed state.
