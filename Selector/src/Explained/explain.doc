@@ -1,0 +1,14 @@
+# Selector
+
+A **selector** represents a piece of **derived state**. 
+You can think of derived state as the output of passing state to a pure function that derives a new value from the said state.
+
+Derived state is a powerful concept because it lets us build dynamic data that depends on other data.
+
+https://petal-estimate-4e9.notion.site/Selector-1247dfd10735801d9786f0786c299b62
+
+selector changes its value when there is change in the Atom's value kind of depends on it
+uses pure function 
+when the counter is increase by 2 there is only on re-rending that is the counter
+but when decresed the value the both IsEven and counter value is change so there will be re-rending of both
+selector don't take default value instead it use another function value and a setter function to perform change
