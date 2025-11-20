@@ -1,52 +1,101 @@
-import './App.css';
-import {useEffect, useState} from "react";
+// import './App.css';
+// import {useEffect, useState,memo} from "react";
 
-function App() {
+// function App() {
+
+//   return (
+//     <>
+//       <Counter/>
+//     </>
+//   )
+// }
+
+// function Counter(){
+//   const [count,setCount] = useState(0);
+
+//   useEffect(()=>{
+//     setInterval(()=>{
+//       setCount(c=>c+1);
+//     },3000)
+//   },[])
+//   return (
+//     <>
+//       <Value/>
+//       <Increment/> 
+//       <Decrement/>
+//     </>
+//   )
+// }
+
+// const Value = memo(function(){
+//   return(
+//     <div>3</div>
+//   )
+// })
+
+// const Increment = memo(function (){
+//   function inc(){
+
+//   }
+//   return(
+//     <button onClick={inc}> Increment</button>
+//   )
+// })
+
+// const Decrement = memo(function (){
+//   function dec(){
+
+//   }
+//   return(
+//     <button onClick={dec}> Decrement</button>
+//   )
+// })
+
+// export default App
+
+
+import { useState, memo } from "react";
+
+export default function App() {
+  const [count, setCount] = useState(0);
+  const [text, setText] = useState("");
+
+  console.log("App rendered");
 
   return (
     <>
-      <Counter/>
+      <h2>Count: {count}</h2>
+      <button onClick={() => setCount(c => c + 1)}>Increment</button>
+      <br /><br />
+
+      <input
+        placeholder="Type something..."
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
+
+      <NormalChild />
+      <MemoChild />
     </>
-  )
+  );
 }
 
-function Counter(){
-  const [count,setCount] = useState(0);
-
-  useEffect(()=>{
-    
-  })
-  return (
-    <>
-      <Value/>
-      <Increment/> 
-      <Decrement/>
-    </>
-  )
+function NormalChild() {
+  console.log("NormalChild rendered");
+  return <div>Normal Child</div>;
 }
 
-function Value(){
-  return(
-    <pre>4</pre>
-  )
-}
+const MemoChild = memo(function MemoChild() {
+  console.log("MemoChild rendered");
+  return <div>Memo Child</div>;
+});
 
-function Increment(){
-  function inc(){
 
-  }
-  return(
-    <button onClick={inc}> Increment</button>
-  )
-}
+// App rendered
+// NormalChild rendered
+// MemoChild rendered  ← first time only
 
-function Decrement(){
-  function dec(){
-
-  }
-  return(
-    <button onClick={dec}> Decrement</button>
-  )
-}
-
-export default App
+// // After clicking increment
+// App rendered
+// NormalChild rendered  ← renders again
+// // MemoChild did NOT render again ✔️
