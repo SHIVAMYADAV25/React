@@ -1,0 +1,44 @@
+problem : when an parent elemnt re-render all the other child element re-render
+to avoid this we use memo
+
+for example use have a variable count in parent component if the variable changes only the parent component should 
+be changing not the child
+
+the child component will only change when the count variable is pass as props to its child unless and untill there
+there will be not change
+
+
+
+
+# memo
+
+https://whereisthemouse.com/react-components-when-do-children-re-render
+
+The reason both the components re-render is because when a component re-renders, all its children re-render as well.
+
+## Introducing memo
+
+`memo` lets you skip re-rendering a component when its props are unchanged.
+
+```jsx
+import { memo } from 'react';
+
+const Buttons = memo(function () {
+  const setCount = useSetRecoilState(counter);
+
+  function increase() {
+    setCount(c => c + 1)
+  }
+  
+  function decrease() {
+    setCount(c => c - 1)
+  }
+  
+  return <div>
+    <button onClick={increase}>Increase</button>
+    <button onClick={decrease}>Decrease</button>
+  </div>
+})
+```
+
+u only need to wrap the parent component into memo and done
