@@ -43,3 +43,9 @@ function IsEven(){
 }
 
 export default App
+
+
+// let count = useRecoilValue(CounterAtom) // only give value
+// const setCount = useSetRecoilState(CounterAtom) // gives the setter 
+
+// let [count , setCount] = useSetRecoilState(CounterAtom) // gives both the value and setter
