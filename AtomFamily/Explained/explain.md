@@ -14,3 +14,5 @@ what do id u want from i will give u that data where the id match's
 id is what we pass or gets from component (props);
 
 - normal useRecoilstate would look like this useRecoilState(todosAtomFamily);
+
+# for each component it will create its own Atom that why called as Atomfamily

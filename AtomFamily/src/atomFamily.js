@@ -7,3 +7,5 @@ export const todoAtomFamily = atomFamily({
         return TODOS.find(t => t.id === id );
     }
 })
+
+// # for each component it will create its own Atom that why called as Atomfamily
