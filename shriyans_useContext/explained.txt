@@ -1,0 +1,10 @@
+create folder with name of context 
+inside that create a file name ThemeContext.tsx
+in main wrap the App file into <ThemeContext> </themeContext>
+so now the app is children of ThemeContext
+inside the ThemeContext the display the porps using {props.children} which is app
+in ThemeContext file create a context using the createContext() hook
+eg => ThemeContextMode()
+then wrap the children of ThemeContext inside <ThemeContextmode value={[mode,setMode]}> </ThemeContextMode>
+
+now any where in the code which is children of app or children of ThemeCOntext can now access the data or variable pass in value
